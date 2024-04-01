@@ -189,7 +189,7 @@ login({
 						}, event.threadID, (err) => {
 							if (err) {
 								api.sendMessage('Please change the prompt or try again.', event.threadID, event.messageID);
-							} else fs.unlinkSync(output.attachment);
+							}
 						}, event.messageID)
 					}
 				} catch (e) {
