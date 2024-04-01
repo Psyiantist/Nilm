@@ -55,11 +55,6 @@ return new Promise((resolve, reject) => {
     writer.on('error', reject);
 });
 
-catch (error) {
-    throw new Error(`Failed to download file: ${error.message}`);
-}
-}
-
 function toggle(filename, searchString) {
     return new Promise((resolve, reject) => {
         fs.readFile(filename, 'utf8', (err, data) => {
