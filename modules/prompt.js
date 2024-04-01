@@ -26,5 +26,5 @@ axios.post('https://nilmaryape123.pythonanywhere.com/get_answer', postData)
         console.log(response.data.answer);
     })
     .catch(error => {
-        console.error(error);
+        console.log("Error: Something went wrong. Please change the prompt. Please take note that it only accepts these languages:\n\nEnglish, Japanese, Korean, Arabic, Bahasa Indonesia, Bengali, Bulgarian, Chinese (Simplified / Traditional), Croatian, Czech, Danish, Dutch, Estonian, Farsi, Finnish, French, German, Gujarati, Greek, Hebrew, Hindi, Hungarian, Italian, Kannada, Latvian, Lithuanian, Malayalam, Marathi, Norwegian, Polish, Portuguese, Romanian, Russian, Serbian, Slovak, Slovenian, Spanish, Swahili, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu and Vietnamese.");
     });
