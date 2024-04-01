@@ -1,0 +1,65 @@
+{
+  "name": "Druit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "abort-controller": "^3.0.0",
+    "akaneko": "^5.2.8",
+    "animequotes": "^2.0.0",
+    "axios": "^1.3.2",
+    "base64-img": "^1.0.4",
+    "dlvid-core": "^1.3.5",
+    "express": "^4.18.2",
+    "fca-unofficial": "^1.3.10",
+    "fluent-ffmpeg": "^2.1.2",
+    "gamedig": "^4.0.7",
+    "got": "^11.8.0",
+    "gpt4all": "^2.2.0",
+    "https": "^1.0.0",
+    "image-recognition": "^1.1.0",
+    "jimp": "^0.22.10",
+    "moment-timezone": "^0.5.43",
+    "node-cron": "^3.0.2",
+    "node-samp-query": "^1.0.0",
+    "node-tiklydown": "^1.0.0",
+    "nodetube": "^0.5.1",
+    "openai": "^3.2.1",
+    "popcat-wrapper": "^1.5.5",
+    "randomstring": "^1.3.0",
+    "request": "^2.88.2",
+    "samp-query": "^0.1.5",
+    "samp-rcon.js": "^1.0.0",
+    "sharp": "^0.31.3",
+    "text-from-image": "^1.1.1",
+    "tictactoe-ai": "^1.0.4",
+    "tiktok-info": "^1.0.2",
+    "tiktok-search": "^2.0.3",
+    "ttsave": "^1.1.1",
+    "weather-js": "^2.0.0",
+    "xvdl": "^2.0.0",
+    "xvideos-scraper": "^1.0.4",
+    "youtube-dl-wrap": "^2.1.1",
+    "youtube-music-api": "^1.0.6",
+    "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@gradio/client": "^0.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justashadow03/ShareKoToKasePogiAko.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justashadow03/ShareKoToKasePogiAko/issues"
+  },
+  "homepage": "https://github.com/justashadow03/ShareKoToKasePogiAko#readme"
+}
