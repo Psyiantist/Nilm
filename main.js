@@ -47,14 +47,6 @@ function readFile(file) {
     }
 }
 
-const writer = fs.createWriteStream(filePathToSave);
-response.data.pipe(writer);
-
-return new Promise((resolve, reject) => {
-    writer.on('finish', resolve);
-    writer.on('error', reject);
-});
-
 function toggle(filename, searchString) {
     return new Promise((resolve, reject) => {
         fs.readFile(filename, 'utf8', (err, data) => {
