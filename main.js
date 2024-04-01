@@ -175,7 +175,7 @@ login({
                             }
                         }, event.messageID)
                     }
-                } catch (e) {
+                 catch (e) {
                     api.sendMessage(output, event.threadID, event.messageID);
                 }
             })
@@ -434,5 +434,4 @@ var listenEmitter = api.listen(async (err, event) => {
 
     }
 
-});
 });
