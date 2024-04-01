@@ -1,14 +1,9 @@
 const fs = require("fs");
 const axios = require("axios");
 const login = require("fca-unofficial");
-const {
-    spawn
-} = require('child_process');
+const { spawn } = require('child_process');
 const express = require('express');
-const {
-    Readable
-} = require('stream');
-
+const { Readable } = require('stream');
 const app = express();
 
 const server = app.listen(9000, () => {});
@@ -25,10 +20,6 @@ const prefix = '/';
 var status = true;
 var onProcess = 0;
 var threaderProcess = false;
-
-const {
-    Readable
-} = require('stream');
 
 function isReadableStreams(streams) {
     if (Array.isArray(streams)) {
