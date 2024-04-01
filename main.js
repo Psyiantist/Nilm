@@ -1,5 +1,5 @@
 const fs = require("fs");
-const https = require('https');
+const request = require("request");
 const axios = require("axios");
 const login = require("fca-unofficial");
 const { spawn } = require('child_process');
@@ -256,15 +256,29 @@ var listenEmitter = api.listen(async (err, event) => {
                 case 'photo':
                     const readableStreamFromUrl = new Readable();
 
-                    https.get(deletedEvent.attachments[0].url, response => {
-                        response.pipe(readableStreamFromUrl);
+                    request.get(deletedEvent.attachments[0].url)
+                    .on('response', function (response) {
+                        // Check if the response status code is OK
+                        if (response.statusCode === 200) {
+                            // Prepare the message object with the image stream
+                            var msg = {
+                                body: `${senderName} unsent this message:\n\n${deletedEvent.body}`,
+                                attachment: response // Pass the response stream directly
+                            };
+                            
+                            // Send the message
+                            api.sendMessage(msg, event.threadID, (err, messageInfo) => {
+                                if (err) return console.error(err);
+                                console.log("Message sent successfully!");
+                            });
+                        } else {
+                            console.error("Failed to fetch image from URL.");
+                        }
+                    })
+                    .on('error', function (err) {
+                        console.error("Error fetching image:", err);
                     });
-
-                    api.sendMessage({
-                        body: senderName + " unsent this " + deletedEvent.attachments[0].type + ":",
-                        attachment: readableStreamFromUrl
-                    }, event.threadID);
-                    break;
+            });
             }
         } else if (deletedEvent.body) {
             api.sendMessage(`${senderName} unsent this message:\n\n${deletedEvent.body}`, event.threadID);
