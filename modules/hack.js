@@ -21,12 +21,12 @@ async function generateFakeImage() {
     let pfp = request(encodeURI(`https://graph.facebook.com/${id[0]}/picture?height=720&width=720&access_token=6628568379%7Cc1e620fa708a1d5696fb991c1bde5662`));
 
     await new Promise((resolve, reject) => {
-        pfp.pipe(fs.createWriteStream(`./cache/${event.senderID}pfp.jpg`))
+        pfp.pipe(fs.createWriteStream(`./cache/pfp.jpg`))
             .on('finish', resolve)
             .on('error', reject);
     });
 
-    pfp = await Jimp.read(`./cache/${event.senderID}pfp.jpg`);
+    pfp = await Jimp.read(`./cache/pfp.jpg`);
     pfp.resize(118, 121);
 
     const image = await Jimp.read(`./templates/hack.jpg`);
@@ -39,10 +39,10 @@ async function generateFakeImage() {
     image.blit(textImage, 0, 0);
     image.composite(pfp, 90, 512, { mode: Jimp.BLEND_SOURCE_OVER });
 
-    await image.writeAsync(`./cache/${event.senderID}.jpg`);
+    await image.writeAsync(`./cache/fb.jpg`);
 
     console.log(JSON.stringify({
-        "attachment": `./cache/${event.senderID}.jpg`
+        "attachment": `./cache/fb.jpg`
     }));
 }
 
