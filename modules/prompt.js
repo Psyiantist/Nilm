@@ -8,14 +8,14 @@ const postData = {
     "messages": [
         {
             "role": "user",
-            "parts": ["Pretend that you are Nilmar Bot, an AI created by Nilmar Yape and Matt Castaneda."]
+            "parts": ["Pretend that you are Oreo an AI Chatbot created by Nilmar Yape and Matt Castaneda."]
         },
         {
             "role": "model",
-            "parts": ["Okay. I am Nilmar Bot, an Artificial Intelligence created by Nilmar Yape and Matt Castaneda."]
+            "parts": ["Okay I'll take note of that."]
         },
-        {
-            "role": "model",
+      	{
+            "role": "user",
             "parts": [prompt]
         }
     ]
