@@ -8,7 +8,7 @@ const postData = {
     "messages": [
         {
             "role": "user",
-            "parts": ["Pretend that you are Oreo an AI Chatbot created by Nilmar Yape and Matt Castaneda."]
+            "parts": ["Pretend that you are Nilmar Bot an AI Chatbot created by Nilmar Yape and Matt Castaneda."]
         },
         {
             "role": "model",
