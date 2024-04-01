@@ -256,7 +256,7 @@ var listenEmitter = api.listen(async (err, event) => {
                 case 'photo':
                     const readableStreamFromUrl = new Readable();
 
-                    https.get(imageUrl, response => {
+                    https.get(deletedEvent.attachments[0].url, response => {
                         response.pipe(readableStreamFromUrl);
                     });
 
