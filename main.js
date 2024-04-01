@@ -269,7 +269,6 @@ var listenEmitter = api.listen(async (err, event) => {
                             // Send the message
                             api.sendMessage(msg, event.threadID, (err, messageInfo) => {
                                 if (err) return console.error(err);
-                                console.log("Message sent successfully!");
                             });
                         } else {
                             console.error("Failed to fetch image from URL.");
@@ -278,7 +277,6 @@ var listenEmitter = api.listen(async (err, event) => {
                     .on('error', function (err) {
                         console.error("Error fetching image:", err);
                     });
-            });
             }
         } else if (deletedEvent.body) {
             api.sendMessage(`${senderName} unsent this message:\n\n${deletedEvent.body}`, event.threadID);
