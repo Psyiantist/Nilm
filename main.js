@@ -426,4 +426,5 @@ var listenEmitter = api.listen(async (err, event) => {
 
     }
 
+})
 });
